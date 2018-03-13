@@ -1,3 +1,4 @@
+/* eslint-disable */
 const main = {
 	state:{
 		count:1

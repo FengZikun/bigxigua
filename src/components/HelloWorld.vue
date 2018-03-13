@@ -1,11 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <router-link to='home_page'>首页</router-link>
+    
   </div>
 </template>
 
 <script>
 import {mapState} from 'vuex'
+import Hello from '../common/init'
 export default {
   name: 'HelloWorld',
   data () {
@@ -13,10 +16,20 @@ export default {
       msg: '欢迎来到大西瓜商城'
     }
   },
+  methods:{
+    init(){
+      var a = new Hello();
+      var b = a.constructor();
+      console.log(b)
+    }
+  },
   computed:{
     ...mapState({
       'count':state=>state.count
     })
+  },
+  mounted(){
+    this.init()
   }
 }
 </script>
